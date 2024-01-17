@@ -138,6 +138,7 @@
   border-bottom: 1px solid #101010;
   height: min-content;
   text-wrap: nowrap;
+  cursor: pointer;
 }
 
 .ellipse {
@@ -158,6 +159,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
+  cursor: pointer;
 }
 
 .info {

@@ -5,8 +5,8 @@
     </router-link>
     <nav class="nav">
       <ul class="nav-bar">
-        <li><router-link to="">Works</router-link> </li>
-        <li><router-link to="">About</router-link> </li>
+        <li><a href="https://qtim.pro/about#vacancies" target="_blank">Works</a> </li>
+        <li><a href="https://qtim.pro/about" target="_blank">About</a> </li>
         <li class="nav-btns">
           <figure class="lang-el"><img src="/assets/icons/uk-icon.svg" alt="" class="lang-el__img" width="24" height="24">
           </figure>
@@ -60,6 +60,7 @@ export default defineComponent({})
   background: #101010;
   color: #fff;
   height: 5.1rem;
+  cursor: pointer;
 }
 
 
@@ -86,5 +87,6 @@ export default defineComponent({})
 .lang-el__img {
   width: 2.4rem;
   height: 2.4rem;
+  cursor: pointer;
 }
 </style>

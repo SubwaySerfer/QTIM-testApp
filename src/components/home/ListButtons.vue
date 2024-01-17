@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-
+// TODO: исправить, если дойти до 9 страницы, потом нажать на увеличить, но не получается посмотреть страницы дальше
 export default defineComponent({
   emits: ['updatePage'],
   props: {
@@ -78,7 +78,6 @@ export default defineComponent({
       if (this.pageCounter >= this.currentPage + 4) {
         if (this.currentPage == 1 && !handle) {
           this.currentPage = 5
-
         }
         this.pages = [];
         for (let i = 1; i < 5; i++) {
@@ -87,6 +86,12 @@ export default defineComponent({
         this.$nextTick(() => {
           !handle ? this.changePage(this.currentPage + +1, false) : this.changePage(this.currentPage, false)
         })
+      } else if (this.pages[this.pages.length - 1] != this.pageCounter) {
+        let difference: number = this.pageCounter - this.currentPage
+        this.pages = this.pages.slice(4 - difference)
+        for (let i = this.currentPage + 1; i <= this.pageCounter; i++) {
+          this.pages.push(i)
+        }
       }
     },
   }
@@ -116,6 +121,7 @@ export default defineComponent({
   line-height: 50%;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .btn-list__arrow {

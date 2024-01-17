@@ -1,18 +1,62 @@
-# Vue 3 + TypeScript + Vite
+# Проект: "QTIM-testApp"
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+---
 
-## Recommended IDE Setup
+## Описание:
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Цель задания:
 
-## Type Support For `.vue` Imports in TS
+-Реализовать верстку шаблона блога по прикрепленному макету
+-Реализовать в проекте взаимодействие с API (прикреплено ниже)
+-Реализовать в проекте модуль блога:
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+1. Вывод списка статей блога
+2. Пагинация на фронтовой части
+3. Переход на детальную страницу
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+[Макет проекта](https://www.figma.com/file/YuLYXnZmLk1U5sKAYjQ0Qy/Test?type=design&node-id=0-1&mode=design&t=qUknJKzxfWOznHn0-0)
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+[Ссылка на деплой](https://celebrated-phoenix-c6a984.netlify.app/)
+
+---
+
+#### Стэк технологий:
+
+Vue3, TS, CSS, Vite, Vue-router
+
+---
+
+## Установка
+
+- `npm install` — установить зависимости
+- `npm run dev` — запуск сервера разработки
+- `npm run build` — сборка проекта
+
+---
+
+## Пример кода:
+
+Vuex mutation example:
+
+```
+createButton(handle: boolean = false) {
+   if (this.pageCounter >= this.currentPage + 4) {
+        if (this.currentPage == 1 && !handle) {
+          this.currentPage = 5
+      }
+        this.pages = [];
+        for (let i = 1; i < 5; i++) {
+          this.pages.push(this.currentPage + +i)
+      }
+        this.$nextTick(() => {
+          !handle ? this.changePage(this.currentPage + +1, false) : this.changePage(this.currentPage, false)
+        })
+   } else if (this.pages[this.pages.length - 1] != this.pageCounter) {
+        let difference: number = this.pageCounter - this.currentPage
+        this.pages = this.pages.slice(4 - difference)
+        for (let i = this.currentPage + 1; i <= this.pageCounter; i++) {
+       this.pages.push(i)
+     }
+   }
+},
+```

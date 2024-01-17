@@ -1,6 +1,6 @@
 <template>
   <main class="article-wrapper">
-    <h1>{{ article.title }}</h1>
+    <h1 class="article__label">{{ article.title }}</h1>
     <img :src="article.image" alt="" width="1216" height="700">
     <div class=" text-block">
       <small class="text-block__small">About</small>
@@ -50,8 +50,8 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
   gap: 7.3rem;
-  color: var(--Style, var(--Style, #101010));
-  padding: 11.9rem 7.77vw 8rem;
+  color: #101010;
+  padding: 11.9rem 7.77vw 8.4rem;
   font-size: 5rem;
   font-style: normal;
   font-weight: 400;
@@ -64,6 +64,8 @@ export default defineComponent({
   flex-direction: column;
   align-items: start;
   text-align: start;
+  margin-top: .8rem;
+  gap: 3.2rem;
 }
 
 .text-block__small {
@@ -78,5 +80,15 @@ export default defineComponent({
   font-weight: 400;
   line-height: 124%;
   width: 60%;
+}
+
+.article__label {
+  font-size: 8.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  text-align: start;
+  width: 100%;
+  height: 16.8rem;
 }
 </style>

@@ -79,5 +79,6 @@ export default defineComponent({
   column-gap: 3.2rem;
   row-gap: 4.2rem;
   margin-top: 5.9rem;
+  min-height: 70rem;
 }
 </style>
