@@ -86,9 +86,6 @@ export default defineComponent({
 }
 
 @media(max-width: 1439px) {
-  /* .aritles-wrapper {
-    padding: 12rem 4vw 14rem;
-  } */
 
   .articles-list {
     justify-content: space-between;

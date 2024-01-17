@@ -35,7 +35,6 @@ export default defineComponent({
         })
         .then(data => {
           this.article = data
-          console.log(data)
         }).catch((err) => { console.log(err) })
     },
 

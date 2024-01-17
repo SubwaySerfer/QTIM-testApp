@@ -9,7 +9,6 @@
             <p><span class="underline">to</span>g<span class="underline">ether</span></p>
           </div>
         </div>
-        <!-- <h4 class="footer__label"> </h4> -->
       </div>
       <ul class="contacts">
         <li class="contacts-el">
