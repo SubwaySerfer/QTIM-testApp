@@ -61,7 +61,8 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 12rem 7.70vw 14rem;
+  padding: 12rem 11.2rem 14rem;
+
 }
 
 .aritles-wrapper__label {
@@ -80,5 +81,46 @@ export default defineComponent({
   row-gap: 4.2rem;
   margin-top: 5.9rem;
   min-height: 70rem;
+  max-width: 121.7rem;
+  justify-content: start;
+}
+
+@media(max-width: 1439px) {
+  /* .aritles-wrapper {
+    padding: 12rem 4vw 14rem;
+  } */
+
+  .articles-list {
+    justify-content: space-between;
+    column-gap: 2vw
+  }
+}
+
+@media(max-width: 1250px) {
+  .aritles-wrapper {
+    padding: 12rem 2vw 14rem;
+  }
+
+  /* .articles-list {
+    justify-content: space-between;
+  } */
+}
+
+@media(max-width: 1000px) {
+  .articles-list {
+    justify-content: space-between;
+    column-gap: 1vw
+  }
+}
+
+@media(max-width: 950px) {
+  .articles-list {
+    justify-content: center;
+    column-gap: 3vw
+  }
+
+  .aritles-wrapper__label {
+    align-self: center;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="card" :id="article.id" @mouseover="mouseOver" @mouseleave="mouseOut" @click="pickArticle(article.id)">
-    <img :src="article.image" width="280" height="280">
+    <img :src="article.image" width="100%" height="280">
     <p class="card__descrp">{{ article.preview }}</p>
     <router-link v-if="isHover" :to='`/article/${article.id}`' class="card__btn">Read
       more</router-link>
@@ -64,7 +64,6 @@ export default defineComponent({
 }
 
 .card__btn {
-  /* padding: 2rem 1rem; */
   color: #E2BEFF;
   font-family: TT Commons;
   font-size: 2rem;
@@ -76,7 +75,6 @@ export default defineComponent({
   text-align: start;
   display: flex;
   justify-content: start;
-  /* bottom: -180px; */
   bottom: -20px
 }
 
@@ -84,5 +82,23 @@ export default defineComponent({
   transform: translateY(-20px);
   transition: all .25s ease-in-out;
   position: relative;
+}
+
+@media(max-width: 1439px) {
+  .card {
+    width: 22.5%;
+  }
+}
+
+@media(max-width: 1000px) {
+  .card {
+    width: 24%;
+  }
+}
+
+@media(max-width: 950px) {
+  .card {
+    width: 40%;
+  }
 }
 </style>

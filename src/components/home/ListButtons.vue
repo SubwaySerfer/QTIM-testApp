@@ -134,4 +134,16 @@ export default defineComponent({
   color: #fff;
   background: #101010
 }
+
+@media(max-width: 1100px) {
+  .buttons-wrapper {
+    margin-left: 1vw;
+  }
+}
+
+@media(max-width: 950px) {
+  .buttons-wrapper {
+    align-self: center
+  }
+}
 </style>
